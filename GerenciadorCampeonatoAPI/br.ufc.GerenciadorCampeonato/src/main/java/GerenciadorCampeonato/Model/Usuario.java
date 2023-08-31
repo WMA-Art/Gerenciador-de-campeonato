@@ -1,18 +1,25 @@
 package GerenciadorCampeonato.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import java.util.ArrayList;
+import java.util.Collection;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 @Entity
-public class Usuario {
+public class Usuario implements UserDetails{
 	
 	@Id
 	private String email;
+	
 	private String nomeCompleto;
-	private String usuario;
+	private String username;
 	private String senha;
 	private String avatar;
-	
+
 	public String getEmail() {
 		return email;
 	}
@@ -25,11 +32,11 @@ public class Usuario {
 	public void setNomeCompleto(String nomeCompleto) {
 		this.nomeCompleto = nomeCompleto;
 	}
-	public String getUsuario() {
-		return usuario;
+	public String getUsername() {
+		return username;
 	}
-	public void setUsuario(String usuario) {
-		this.usuario = usuario;
+	public void setUsername(String Username) {
+		this.username = Username;
 	}
 	public String getSenha() {
 		return senha;
@@ -45,4 +52,32 @@ public class Usuario {
 	}
 	
 	
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return new ArrayList<>();
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+    @Override
+    public boolean isEnabled() {
+        return true;
+	}
+	@Override
+	public String getPassword() {
+        return senha;
+    }
+
 }
+
+	

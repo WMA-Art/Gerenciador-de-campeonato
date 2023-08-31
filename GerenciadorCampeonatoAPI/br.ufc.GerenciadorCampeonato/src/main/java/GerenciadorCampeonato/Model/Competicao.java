@@ -1,9 +1,9 @@
 package GerenciadorCampeonato.Model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Competicao {
@@ -11,8 +11,10 @@ public class Competicao {
 	@Id
 	@GeneratedValue
 	private int id;
+
 	@ManyToOne
-	private Usuario Usuario;
+	private Usuario usuario;
+
 	private String nome;
 	private String descricao;
 	private String quantTimes;
@@ -65,6 +67,10 @@ public class Competicao {
 
 	public void setFormaCompeticao(String formaCompeticao) {
 		this.formaCompeticao = formaCompeticao;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 }

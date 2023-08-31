@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Application<springjpa>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "GerenciadorCampeonato.Application",
+            "projectName": "springjpa",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
