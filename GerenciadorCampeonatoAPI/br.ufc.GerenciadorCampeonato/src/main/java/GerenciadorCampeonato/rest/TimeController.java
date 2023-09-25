@@ -1,7 +1,7 @@
 package GerenciadorCampeonato.rest;
 
 import java.util.List;
-
+import java.util.Random;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,6 +30,27 @@ public class TimeController {
     @GetMapping("/{id}")
     public Time getTimeById(@PathVariable int id) {
         return timeRepository.findById(id).orElse(null);
+    }
+    
+    //Sorteio de times
+    
+    @GetMapping("/sorteio")
+    public Time getSorteio() {
+    	
+        List<Integer> allIds = timeRepository.getAllIds();
+
+        if (allIds.isEmpty()) {
+            return null; 
+        }
+        
+        Random gerador = new Random();
+        int randomIndex = gerador.nextInt(allIds.size());
+        int randomId = allIds.get(randomIndex);
+
+        Time timeSorteado = timeRepository.findById(randomId).orElse(null);
+
+        return timeSorteado;
+    	
     }
 
     @PostMapping

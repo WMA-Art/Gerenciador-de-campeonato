@@ -40,8 +40,10 @@ public class SecurityConfiguration {
 
                 .antMatchers(HttpMethod.POST, "/api/competicao*").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/competicao*").permitAll()
+                .antMatchers(HttpMethod.POST, "/api/partida*").permitAll()
                 .antMatchers(HttpMethod.POST, "/api/time").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/time*").permitAll()
+                
                 .antMatchers(HttpMethod.GET, "/api/competicao/{id}").permitAll()
                 .antMatchers(HttpMethod.PUT, "/api/competicao*").permitAll()
                 .antMatchers(HttpMethod.DELETE, "/api/competicao*").permitAll()

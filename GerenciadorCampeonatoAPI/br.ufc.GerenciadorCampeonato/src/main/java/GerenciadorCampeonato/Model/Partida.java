@@ -6,6 +6,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 
 @Entity
 public class Partida {
@@ -20,6 +21,8 @@ public class Partida {
 	private String placar;
 	@ManyToMany
 	private List<Time> time;
+	@ManyToOne
+	private Competicao competicao;
 
 	public int getId() {
 		return id;
