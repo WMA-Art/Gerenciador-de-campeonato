@@ -1,0 +1,22 @@
+<div class="login-bg">
+  <div class="login-container">
+
+    <div>
+      <h2> <span style="color:#FFCE21">Gerencie seus campeonatos</span>
+       de uma forma fácil!</h2>
+    </div>
+    
+    <div class="input-wrapper">
+      <label for="username">Usuário</label>
+      <input [(ngModel)]="username" type="text" id="username" />
+      <label for="password">Senha</label>
+      <input [(ngModel)]="password" type="password" id="password" />
+      <a style="color: red">{{ loginFailMessage }}</a>
+      <button (click)="login()">Entrar</button>
+    </div>
+    
+    <h3>Não tem uma conta? <a href="http://localhost:4200/register" id="novoUser"> cadastre-se</a> </h3>
+    
+    
+  </div>
+</div>
