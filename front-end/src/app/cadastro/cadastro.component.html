@@ -5,48 +5,21 @@
       <label for="photo">Foto</label>
       <input [(ngModel)]="photo" type="text" id="photo" name="photo" />
       <label for="username">Usuario</label>
-      <input
-        [(ngModel)]="username"
-        type="text"
-        id="username"
-        name="username"
-        required
-      />
+      <input [(ngModel)]="username" type="text" id="username" name="username" required/>
     
       <label for="fullname">Nome</label>
-      <input
-        [(ngModel)]="fullname"
-        type="text"
-        id="fullname"
-        name="fullname"
-        required
-      />
+      <input [(ngModel)]="fullname" type="text" id="fullname" name="fullname" required/>
     
       <label for="email">E-mail</label>
       <input [(ngModel)]="email" type="email" id="email" name="email" required />
     
       <label for="password">Senha</label>
-      <input
-        [(ngModel)]="password"
-        type="password"
-        id="password"
-        name="password"
-        required
-      />
+      <input [(ngModel)]="password" type="password" id="password" name="password" required />
     
       <label for="confirmPassword">Confirme sua senha</label>
       <input
-        [(ngModel)]="confirmPassword"
-        type="password"
-        id="confirmPassword"
-        name="confirmPassword"
-        required
-      />
+        [(ngModel)]="confirmPassword" type="password" id="confirmPassword" name="confirmPassword" required/>
     
       <button (click)="register()">Criar conta</button>
-    </div>
-
-    <div>
-      <span class="img-bola"></span>
     </div>
 </div>

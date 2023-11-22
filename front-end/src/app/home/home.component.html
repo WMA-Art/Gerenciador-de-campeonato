@@ -1,37 +1,44 @@
 
-
-<div class="search">
-  <app-search (searchEvent)="performSearch($event)"></app-search>
-</div>
-<br>
-
-
-
-
-<div class="user-grid">
-  <div class="user-card" *ngFor="let usuario of usuariosFiltrados">
-    <div class="user-photo">
-      <img [src]="usuario.photo" alt="Foto do usuário" height="50" width="50">
-    </div>
-    <div class="user-details">
-      <div class="user-name">Nome: {{ usuario.username }}</div>
-      <div class="user-email">E-mail: {{ usuario.email }}</div>
-    </div>
+<div class="home-bg">
+  <div class="navbar">
+    <app-navbar></app-navbar>
+    <app-user-perfil></app-user-perfil>
   </div>
-</div>
+  <br>
+  
+  <div>
+    <app-search (searchEvent)="performSearch($event)"></app-search>
+  </div>
+  <br>
 
-
-<h2>Lista de Usuários</h2>
-<div class="user-grid">
-  <div class="user-card" *ngFor="let usuario of usuarios">
-    <div class="user-photo">
-      <img [src]="usuario.photo" alt="Foto do usuário" height="50" width="50">
+  
+  <div class="user-grid">
+    <div class="user-card" *ngFor="let usuario of usuariosFiltrados">
+      <div class="user-photo">
+        <img [src]="usuario.photo" alt="Foto do usuário" height="50" width="50">
+      </div>
+      <div class="user-details">
+        <div class="user-name">Nome: {{ usuario.username }}</div>
+        <div class="user-email">E-mail: {{ usuario.email }}</div>
+        <br>
+      </div>
     </div>
-    <div class="user-details">
-      <div class="user-name">{{ usuario.username }}</div>
+    <br>
+  </div>
+  
+<div class="campeonato-grid">
+  <div class="campeonato-card" *ngFor="let usuario of usuarios">
+    <div class="campeonato-photo">
+      <img [src]="usuario.photo" alt="Foto do campeonato" height="50" width="50">
+    </div>
+    <div class="campeonato-detalhe">
+      <div class="campeonatos-name">{{ usuario.username }}</div>
       
     </div>
   </div>
 </div>
 
-
+<div class="button-container">
+  <button class="cadastrar-btn">Cadastrar Competição</button>
+</div>
+</div>

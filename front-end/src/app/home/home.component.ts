@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
   }
 
   getUsuarios() {
-    this.http.get<any[]>('http://localhost:8080/api/user')
+    this.http.get<any[]>('http://localhost:8080/api/usuario')
       .subscribe(
         response => {
           this.usuarios = response;
@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
 
   getUsuarioLogado() {
   
-    this.http.get<any>('http://localhost:8080/api/user/me')
+    this.http.get<any>('http://localhost:8080/api/usuario/me')
       .subscribe(
         response => {
           this.usuarioLogado = response;

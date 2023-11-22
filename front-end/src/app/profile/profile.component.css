@@ -1,0 +1,21 @@
+.profile {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .profile h2 {
+    margin-bottom: 20px;
+  }
+  
+  .profile-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  .profile-buttons button {
+    padding: 8px 16px;
+    font-size: 16px;
+  }
+  

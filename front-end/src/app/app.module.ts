@@ -12,6 +12,8 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
 import { UserPerfilComponent } from './user-perfil/user-perfil.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   imports: [
@@ -20,9 +22,6 @@ import { UserPerfilComponent } from './user-perfil/user-perfil.component';
     AppRoutingModule,
     HttpClientModule,
 
-    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
-    // and returns simulated server responses.
-    // Remove it when a real server is ready to receive requests.
 
   ],
   declarations: [
@@ -31,7 +30,9 @@ import { UserPerfilComponent } from './user-perfil/user-perfil.component';
     CadastroComponent,
     HomeComponent,
     SearchComponent,
-    UserPerfilComponent
+    UserPerfilComponent,
+    NavbarComponent,
+    ProfileComponent
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpBasicAuthInterceptor, multi: true}],
   bootstrap: [ AppComponent ]

@@ -23,16 +23,16 @@ export class CadastroComponent {
       alert("As senhas não correspondem");
       return;
     }
-
+//atributos p mandar pro back: this.o que tava no html
     const user = {
       username: this.username,
-      password: this.password,
-      fullname: this.fullname,
-      photo: this.photo,
+      senha: this.password,
+      nomeCompleto: this.fullname,
+      avatar: this.photo,
       email: this.email
     };
 
-    this.http.post('http://localhost:8080/api/user/register', user)
+    this.http.post('http://localhost:8080/api/usuario/register', user)
       .subscribe(
         response => {
           console.log('Cadastro realizado com sucesso', response);
@@ -40,7 +40,6 @@ export class CadastroComponent {
         },
         error => {
           console.error('Erro ao cadastrar usuário', error);
-          // Trate o erro de acordo com suas necessidades.
         }
       );
   }

@@ -24,6 +24,10 @@ export class LoginComponent implements OnInit {
   login(){
     console.log('login - ' + this.username + ':' + this.password);
     this.loginService.login(this.username, this.password).subscribe((user) => {
+      const userDetails = {
+        username: this.username
+      };
+      localStorage.setItem('userDetails', JSON.stringify(userDetails));
       console.log('USER/ME: ');
       console.log(user);
       this.localStorage.set('authorization', btoa(this.username + ':' + this.password));

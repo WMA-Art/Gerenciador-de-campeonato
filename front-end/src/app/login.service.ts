@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class LoginService {
 
-  private API_USER_ME: string = 'http://localhost:8080/api/user/me';
+  private API_USER_ME: string = 'http://localhost:8080/api/usuario/me';
 
   constructor(private http: HttpClient) { }
 
