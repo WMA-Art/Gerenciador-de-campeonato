@@ -2,57 +2,40 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'home',
+  selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  usuarios: any[] = [];
-  usuariosFiltrados: any[] = [];
-  usuarioLogado: any; 
+  competicoes: any[] = [];
+  competicoesFiltradas: any[] = [];
 
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.getUsuarios();
-    this.getUsuarioLogado(); 
+    this.getCompeticoes();
   }
-
-  getUsuarios() {
-    this.http.get<any[]>('http://localhost:8080/api/usuario')
+  //competições do usuario logado
+  getCompeticoes() {
+    this.http.get<any[]>('http://localhost:8080/api/competicao/usuario')
       .subscribe(
         response => {
-          this.usuarios = response;
+          this.competicoes = response;
+          this.competicoesFiltradas = [...this.competicoes];
         },
         error => {
-          console.error('Erro ao buscar usuários', error);
-          
+          console.error('Erro ao buscar competições', error);
         }
       );
   }
-
-  getUsuarioLogado() {
-  
-    this.http.get<any>('http://localhost:8080/api/usuario/me')
-      .subscribe(
-        response => {
-          this.usuarioLogado = response;
-        },
-        error => {
-          console.error('Erro ao buscar usuário logado', error);
-         
-        }
-      );
-  }
-
+  //pesquisando as competições
   performSearch(searchTerm: string) {
     if (searchTerm) {
-      this.usuariosFiltrados = this.usuarios.filter(usuario =>
-        (usuario.username && usuario.username.toLowerCase().includes(searchTerm.toLowerCase())) ||
-        (usuario.email && usuario.email.toLowerCase().includes(searchTerm.toLowerCase()))
+      this.competicoesFiltradas = this.competicoes.filter(competicao =>
+        competicao.nome.toLowerCase().includes(searchTerm.toLowerCase())
       );
     } else {
-      this.usuariosFiltrados = [];
+      this.competicoesFiltradas = [...this.competicoes];
     }
   }
 }

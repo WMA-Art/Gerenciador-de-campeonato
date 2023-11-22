@@ -20,15 +20,15 @@ body{
   color: #ffffff;
   padding: 10px;
   display: flex;
-  justify-content: flex-start; /* Alinha os itens para o canto esquerdo */
-  align-items: center; /* Alinha verticalmente os itens ao centro */
+  justify-content: flex-start; 
+  align-items: center; 
 }
 
 .nav-list, button {
   list-style: none;
   display: flex;
   padding: 0;
-  margin-left: auto; /* Move a lista para o lado direito */
+  margin-left: auto; 
 }
 
 .nav-item,button {

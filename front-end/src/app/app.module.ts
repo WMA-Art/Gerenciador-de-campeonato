@@ -13,7 +13,10 @@ import { HomeComponent } from './home/home.component';
 import { SearchComponent } from './search/search.component';
 import { UserPerfilComponent } from './user-perfil/user-perfil.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { ProfileComponent } from './profile/profile.component';
+import { CadastroTimeFutebolComponent } from './cadastro-time-futebol/cadastro-time-futebol.component';
+import { CadastroJogadoresComponent } from './cadastro-jogadores/cadastro-jogadores.component';
+import { CadastroCampeonatoComponent } from './cadastro-campeonato/cadastro-campeonato.component';
+import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 
 @NgModule({
   imports: [
@@ -32,7 +35,10 @@ import { ProfileComponent } from './profile/profile.component';
     SearchComponent,
     UserPerfilComponent,
     NavbarComponent,
-    ProfileComponent
+    CadastroTimeFutebolComponent,
+    CadastroJogadoresComponent,
+    CadastroCampeonatoComponent,
+    SobreNosComponent
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpBasicAuthInterceptor, multi: true}],
   bootstrap: [ AppComponent ]

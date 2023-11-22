@@ -9,7 +9,7 @@ export class NavbarComponent {
   constructor() { }
 
   limparLocalStorage(): void {
-    localStorage.clear(); // Isso limpará todos os dados do Local Storage
+    localStorage.clear(); //limpando a sessão
     console.log('Local Storage foi limpo!');
     window.location.reload();
   }
