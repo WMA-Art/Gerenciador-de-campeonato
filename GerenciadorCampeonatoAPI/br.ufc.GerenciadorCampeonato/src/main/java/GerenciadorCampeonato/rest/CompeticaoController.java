@@ -4,6 +4,8 @@ import java.util.Collections;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -37,16 +39,16 @@ public class CompeticaoController {
     }
 
     @PostMapping
-    public Competicao save(@RequestBody Competicao competicao) {
+    public ResponseEntity<Competicao> saveCompeticao(@RequestBody Competicao competicao) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication != null && authentication.getPrincipal() instanceof Usuario) {
             Usuario usuario = (Usuario) authentication.getPrincipal();
             competicao.setUsuario(usuario);
-            return competicaoRepository.save(competicao);
+            Competicao competicaoSalva = competicaoRepository.save(competicao);
+            return new ResponseEntity<>(competicaoSalva, HttpStatus.CREATED);
         }
-        return competicao;
+        return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
-
     @GetMapping("/usuario")
     public List<Competicao> getCompeticoesDoUsuarioAutenticado() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

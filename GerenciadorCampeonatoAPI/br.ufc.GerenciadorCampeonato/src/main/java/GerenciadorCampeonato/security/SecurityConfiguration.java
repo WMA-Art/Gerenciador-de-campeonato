@@ -34,6 +34,8 @@ public class SecurityConfiguration {
                 .antMatchers(HttpMethod.POST, "/api/usuario/register").permitAll()
                 .antMatchers(HttpMethod.POST, "/api/usuario/login").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/usuario/login").permitAll()
+                .antMatchers(HttpMethod.GET, "/api/competicao").permitAll()
+                .antMatchers(HttpMethod.POST, "/api/competicao").permitAll()
                 .anyRequest().authenticated()
                 .and().httpBasic()
                 .and().authenticationProvider(authProvider());
