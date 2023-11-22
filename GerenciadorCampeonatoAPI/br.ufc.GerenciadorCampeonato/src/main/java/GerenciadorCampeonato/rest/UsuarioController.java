@@ -35,7 +35,7 @@ public class UsuarioController {
         return usuarioRepository.findById(email).orElse(null);
     }
 
-    @PostMapping
+    @PostMapping("/register")
     public Usuario save(@RequestBody Usuario usuario) {
         usuario.setSenha(passwordEncoder.encode(usuario.getSenha()));
         return usuarioRepository.saveAndFlush(usuario);

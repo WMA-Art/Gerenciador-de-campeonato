@@ -29,24 +29,11 @@ public class SecurityConfiguration {
                 .csrf().disable()
                 .cors().and()
                 .authorizeRequests()
-                .antMatchers(HttpMethod.GET, "/api/usuario*").permitAll()
-                .antMatchers(HttpMethod.POST, "/api/usuario*").permitAll()
-                .antMatchers(HttpMethod.GET, "/api/usuario/cadastro").permitAll()
-                .antMatchers(HttpMethod.POST, "/api/usuario/cadastro").permitAll()
+                .antMatchers(HttpMethod.GET, "/api/usuario").permitAll()    
+                .antMatchers(HttpMethod.GET, "/api/usuario/register").permitAll()
+                .antMatchers(HttpMethod.POST, "/api/usuario/register").permitAll()
                 .antMatchers(HttpMethod.POST, "/api/usuario/login").permitAll()
                 .antMatchers(HttpMethod.GET, "/api/usuario/login").permitAll()
-                .antMatchers(HttpMethod.PUT, "/api/usuario*").permitAll()
-                .antMatchers(HttpMethod.DELETE, "/api/usuario*").permitAll()
-
-                .antMatchers(HttpMethod.POST, "/api/competicao*").permitAll()
-                .antMatchers(HttpMethod.GET, "/api/competicao*").permitAll()
-                .antMatchers(HttpMethod.POST, "/api/partida*").permitAll()
-                .antMatchers(HttpMethod.POST, "/api/time").permitAll()
-                .antMatchers(HttpMethod.GET, "/api/time*").permitAll()
-                
-                .antMatchers(HttpMethod.GET, "/api/competicao/{id}").permitAll()
-                .antMatchers(HttpMethod.PUT, "/api/competicao*").permitAll()
-                .antMatchers(HttpMethod.DELETE, "/api/competicao*").permitAll()
                 .anyRequest().authenticated()
                 .and().httpBasic()
                 .and().authenticationProvider(authProvider());
@@ -54,7 +41,6 @@ public class SecurityConfiguration {
 
         return http.build();
     }
-
     @Bean
     public AuthenticationProvider authProvider() {
         DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
@@ -63,8 +49,9 @@ public class SecurityConfiguration {
             public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
                 Usuario user = usuarioRepository.findUserByUsername(username)
                         .orElseThrow(() -> new UsernameNotFoundException(username));
-                return (UserDetails) user;
+                return user;
             }
+
         });
         authProvider.setPasswordEncoder(passwordEncoder());
         return authProvider;
@@ -74,5 +61,6 @@ public class SecurityConfiguration {
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+
 
 }
