@@ -38,6 +38,7 @@ public class CompeticaoController {
         return competicaoRepository.findById(id).orElse(null);
     }
 
+    
     @PostMapping
     public ResponseEntity<Competicao> saveCompeticao(@RequestBody Competicao competicao) {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
@@ -49,6 +50,7 @@ public class CompeticaoController {
         }
         return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
     }
+    
     @GetMapping("/usuario")
     public List<Competicao> getCompeticoesDoUsuarioAutenticado() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();

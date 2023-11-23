@@ -1,6 +1,7 @@
 package GerenciadorCampeonato.rest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
@@ -42,16 +43,17 @@ public class UsuarioController {
     }
 
     @PutMapping("/{email}")
-    public Usuario updateUsuario(@PathVariable String email, @RequestBody Usuario novoUsuario) {
+    public ResponseEntity<Usuario> updateUsuario(@PathVariable String email, @RequestBody Usuario novoUsuario) {
         Usuario usuarioExistente = usuarioRepository.findById(email).orElse(null);
         if (usuarioExistente != null) {
             usuarioExistente.setNomeCompleto(novoUsuario.getNomeCompleto());
             usuarioExistente.setUsername(novoUsuario.getUsername());
-            usuarioExistente.setSenha(novoUsuario.getSenha());
+           // usuarioExistente.setSenha(passwordEncoder.encode(novoUsuario.getSenha()));
             usuarioExistente.setAvatar(novoUsuario.getAvatar());
-            return usuarioRepository.save(usuarioExistente);
+            Usuario usuarioAtualizado = usuarioRepository.save(usuarioExistente);
+            return ResponseEntity.ok(usuarioAtualizado);
         }
-        return null;
+        return ResponseEntity.notFound().build();
     }
 
     @DeleteMapping("/{email}")
