@@ -1,24 +1,27 @@
-<div class="navbar">
+<div class="cadastro-campeonato-bg">
   <app-navbar></app-navbar>
-  <app-user-perfil></app-user-perfil>
-</div>
-<div class="cadastro-campeonato-container">
-    <h2>Cadastro de Campeonato</h2>
-    <label for="nome">Nome</label>
-    <input [(ngModel)]="nome" type="text" id="nome" name="nome" required />
+  <div class="card-1">
+    <div class="cadastro-campeonato-container">
+      <h2>Cadastro de Campeonato</h2>
+      <label for="nome">Nome</label>
+      <input [(ngModel)]="nome" type="text" id="nome" name="nome" required />
+    
+      <label for="descricao">Descrição</label>
+      <input [(ngModel)]="descricao" type="text" id="descricao" name="descricao" required />
+    
+      <label for="quantTimes">Quantidade de Times</label>
+      <input [(ngModel)]="quantTimes" type="text" id="quantTimes" name="quantTimes" required />
+    
+      <label for="premiacao">Premiacao</label>
+      <input [(ngModel)]="premiacao" type="text" id="premiacao" name="premiacao" required />
   
-    <label for="descricao">Descrição</label>
-    <input [(ngModel)]="descricao" type="text" id="descricao" name="descricao" required />
+      <label for="formaCompeticao">Forma da Competição</label>
+      <input [(ngModel)]="formaCompeticao" type="text" id="formaCompeticao" name="formaCompeticao" required />
   
-    <label for="quantTimes">quantTimes</label>
-    <input [(ngModel)]="quantTimes" type="text" id="quantTimes" name="quantTimes" required />
-  
-    <label for="premiacao">premiacao</label>
-    <input [(ngModel)]="premiacao" type="text" id="premiacao" name="premiacao" required />
-
-    <label for="formaCompeticao">formaCompeticao</label>
-    <input [(ngModel)]="formaCompeticao" type="text" id="formaCompeticao" name="formaCompeticao" required />
-
-    <button (click)="cadastrarCampeonato()">Cadastrar Campeonato</button>
+      <button (click)="cadastrarCampeonato()">Cadastrar Campeonato</button>
+    </div>
   </div>
+
+</div>
+
   

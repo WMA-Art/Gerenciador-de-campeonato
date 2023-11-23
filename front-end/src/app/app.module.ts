@@ -17,6 +17,7 @@ import { CadastroTimeFutebolComponent } from './cadastro-time-futebol/cadastro-t
 import { CadastroJogadoresComponent } from './cadastro-jogadores/cadastro-jogadores.component';
 import { CadastroCampeonatoComponent } from './cadastro-campeonato/cadastro-campeonato.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
+import { InserirTimeComponent } from './inserir-time/inserir-time.component';
 
 @NgModule({
   imports: [
@@ -38,7 +39,8 @@ import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
     CadastroTimeFutebolComponent,
     CadastroJogadoresComponent,
     CadastroCampeonatoComponent,
-    SobreNosComponent
+    SobreNosComponent,
+    InserirTimeComponent
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpBasicAuthInterceptor, multi: true}],
   bootstrap: [ AppComponent ]

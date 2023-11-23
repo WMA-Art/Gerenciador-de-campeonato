@@ -57,7 +57,7 @@
   left: 0px; /* Ajuste a posição horizontal da imagem conforme necessário */
   width: 400px; /* Largura desejada da imagem */
   height: 400px; /* Altura desejada da imagem */
-  background-image: url('src/app/imagens/11698-removebg-preview.png');
+  background-image: url('src\assets\img\11698-removebg-preview.png');
   background-size: cover;
   z-index: 1;
 }

@@ -11,8 +11,10 @@
   font-weight: normal;
   font-style: normal;
 }
-body{
+
+body {
   font-family: 'Poppins';
+  margin: 0;
 }
 
 .navbar {
@@ -22,29 +24,39 @@ body{
   display: flex;
   justify-content: flex-start; 
   align-items: center; 
+  background-color: #92909063;
+
 }
 
-.nav-list, button {
+.nav-list, button, span{
   list-style: none;
   display: flex;
   padding: 0;
   margin-left: auto; 
 }
 
-.nav-item,button {
+.nav-item,button, span {
   margin: 0 10px;
 }
 
-.nav-item a , button{ 
+.nav-item a , button, span{ 
   text-decoration: none;
-  color: #fff;
+  color: #000000;
   font-family: 'Poppins';
   font-size: 19px;
   font-weight: 500;
   line-height: 33px;
   letter-spacing: 0em;
   text-align: left;
-  letter-spacing: 0.1em;
-  background-color: #ffffff00;
+  letter-spacing: 0.1em; background-color: #92909000;
   
+}
+
+span{
+  margin-right: 1px;
+}
+
+img{
+  margin-left: 10px;
+  margin-top: 10px;
 }

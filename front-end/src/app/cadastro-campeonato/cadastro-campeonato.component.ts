@@ -37,7 +37,7 @@ export class CadastroCampeonatoComponent {
       console.log('Campeonato cadastrado com sucesso', response);
       const idCompeticao = response.id;
       //tava repassando pela rota, mas n precisa aparentemente 
-      this.router.navigate(['/times', idCompeticao]);
+      this.router.navigate(['/inserir-time', idCompeticao]);
     },
     error => {
       console.error('Erro ao cadastrar campeonato', error);
