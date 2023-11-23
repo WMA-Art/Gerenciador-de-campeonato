@@ -21,7 +21,9 @@ export class ProfileComponent {
     this.router.navigate(['/login']);
   }
 
-  logout() {
-    this.router.navigate(['/login']);
+  limparLocalStorage(): void {
+    localStorage.clear();
+    console.log('Local Storage foi limpo!');
+    window.location.reload();
   }
 }

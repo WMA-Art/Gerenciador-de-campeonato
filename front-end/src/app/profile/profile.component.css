@@ -1,21 +1,61 @@
+.profile-bg {
+  position: fixed;
+  background-image: linear-gradient(#3d8d4572 0%, #3d8d4572 90%, rgba(0, 0, 0, 0)), url('src\assets\img\caber-mulher-brincando-com-bola-de-futebol.jpg');
+  
+  background-size:cover;
+  background-repeat: no-repeat;
+  width: 800px;
+  height: 800px;
+  top: -50px;
+  left: -344px;
+  border-radius: 0% 50% 50% 0;
+  border: 35px solid #D3E8D8;
+  border-top-width: 10px;
+  border-block-end-width: 10px;
+}
+
 .profile {
-    text-align: center;
-    margin-top: 20px;
-  }
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile h2 {
+  margin-bottom: 20px;
+}
+
+.profile-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   
-  .profile h2 {
-    margin-bottom: 20px;
-  }
-  
-  .profile-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
-  }
-  
-  .profile-buttons button {
-    padding: 8px 16px;
-    font-size: 16px;
-  }
-  
+}
+
+.profile-buttons button {
+  margin-top: 50px;
+  color: #fff;
+  background-color: #3d8d45;
+  padding: 10px 30px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 16px;
+  width: 25%;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  margin-top: 10px;
+}
+
+.profile-buttons button:hover {
+  background-color: #347a3f;
+}
+
+.profile-card {
+  margin-top: 7%;
+  margin-left: 23%;
+  color: #215626;
+}
+
+img{
+  background-color: #9da09d;
+  border-radius: 50%;
+}

@@ -18,6 +18,9 @@ import { CadastroJogadoresComponent } from './cadastro-jogadores/cadastro-jogado
 import { CadastroCampeonatoComponent } from './cadastro-campeonato/cadastro-campeonato.component';
 import { SobreNosComponent } from './sobre-nos/sobre-nos.component';
 import { InserirTimeComponent } from './inserir-time/inserir-time.component';
+import { EditarPerfilComponent } from './editar-perfil/editar-perfil.component';
+import { ExcluirContaComponent } from './excluir-conta/excluir-conta.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   imports: [
@@ -40,7 +43,10 @@ import { InserirTimeComponent } from './inserir-time/inserir-time.component';
     CadastroJogadoresComponent,
     CadastroCampeonatoComponent,
     SobreNosComponent,
-    InserirTimeComponent
+    InserirTimeComponent,
+    EditarPerfilComponent,
+    ExcluirContaComponent,
+    ProfileComponent
   ],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: HttpBasicAuthInterceptor, multi: true}],
   bootstrap: [ AppComponent ]
